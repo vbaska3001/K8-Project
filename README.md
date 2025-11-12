@@ -1,4 +1,4 @@
-K8-Project: MongoDB and Mongo Express Deployment
+## K8-Project: MongoDB and Mongo Express Deployment
 
 Hi everyone!
 This project demonstrates how to deploy MongoDB and Mongo Express apps on a Kubernetes cluster using YAML manifests.
