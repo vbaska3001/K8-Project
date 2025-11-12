@@ -1,4 +1,4 @@
-## K8-Project: MongoDB and Mongo Express Deployment
+## 🚚 K8-Project: MongoDB and Mongo Express Deployment
 
 Hi everyone!
 This project demonstrates how to deploy MongoDB and Mongo Express apps on a Kubernetes cluster using YAML manifests.
@@ -64,7 +64,12 @@ minikube service mongo-express service
 
 URL: http://10.0.1.10:30000 => Sample
 
-## Commands to verify Pod, Service, Secrets and Deployment configurations
+## 🪝 Errors I faced and fixes provided after debugging:
+- **Error:** CrashLoopBackOff error after deploying Mongo-Express
+- **Cause:** MongoDB service name mismatch found in configmap and deployment file.
+- **Fix:** Found MONGO_SERVER value in ConfigMap and Deployment: Changed the reference value of mongodb-configmap in mongo-express.yaml file.
+
+## 📝 Commands to verify Pod, Service, Secrets and Deployment configurations
 kubectl get all
 
 kubectl get pod
@@ -81,8 +86,3 @@ kubectl decribe service mongodb-service
 kubectl describe pod
 
 kubectl logs <POD_ID>
-
-## Errors I faced and fixes provided after debugging:
-- **Error:** CrashLoopBackOff error after deploying Mongo-Express
-- **Cause:** MongoDB service name mismatch found in configmap and deployment file.
-- **Fix:** Found MONGO_SERVER value in ConfigMap and Deployment: Changed the reference value of mongodb-configmap in mongo-express.yaml file.
