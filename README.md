@@ -4,7 +4,7 @@ Hi everyone!
 This project demonstrates how to deploy MongoDB and Mongo Express apps on a Kubernetes cluster using YAML manifests.
 It covers how to manage multi-container applications with ConfigMaps, Secrets, and Services in Kubernetes.
 
-Note: This project was built using Minikube as part of my Kubernetes learning journey.
+Note: This project was built using Minikube in my local machine.
 
 ## 🧩 What’s Inside
 - **MongoDB Deployment** → runs the MongoDB database  
@@ -24,6 +24,13 @@ Note: This project was built using Minikube as part of my Kubernetes learning jo
 - Docker and Dockerhub
 - MongoDB
 - Mongo Express
+
+## 🖥️ Demo Deployment Screenshots
+## Terminal CLI after deployment
+<img width="1214" height="815" alt="Mongo-Express-External-Service-CLI" src="https://github.com/user-attachments/assets/fb1510af-76f8-4653-bf04-e70cb6458259" />
+
+## Mongo Express UI
+<img width="1433" height="835" alt="Mongo-Express-UI" src="https://github.com/user-attachments/assets/9d605be2-9965-462c-830a-c16b3edaca16" />
 
 ## ⚙️ Deployment Steps:
 ## 1. Start MiniKube in your host machine
@@ -53,6 +60,10 @@ kubectl apply -f mongodb-service.yaml
 
 kubectl apply -f mongo-express-service.yaml
 
+minikube service mongo-express service
+
+URL: http://10.0.1.10:30000 => Sample
+
 ## Commands to verify Pod, Service, Secrets and Deployment configurations
 kubectl get all
 
@@ -70,18 +81,6 @@ kubectl decribe service mongodb-service
 kubectl describe pod
 
 kubectl logs <POD_ID>
-
-## Commands: To assign external service for Mongo-Express using Minikube
-minikube service mongo-express service
-
-URL: http://10.0.1.10:30000 => Sample
-
-## 🖥️ Demo Screenshots
-## Terminal CLI after deployment
-<img width="1214" height="815" alt="Mongo-Express-External-Service-CLI" src="https://github.com/user-attachments/assets/fb1510af-76f8-4653-bf04-e70cb6458259" />
-
-## Mongo Express UI
-<img width="1433" height="835" alt="Mongo-Express-UI" src="https://github.com/user-attachments/assets/9d605be2-9965-462c-830a-c16b3edaca16" />
 
 ## Errors I faced and fixes provided after debugging:
 - **Error:** CrashLoopBackOff error after deploying Mongo-Express
