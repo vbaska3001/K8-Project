@@ -27,10 +27,10 @@ Note: This project was built using Minikube in my local machine.
 
 ## 🖥️ Demo Deployment Screenshots
 ## Terminal CLI after deployment
-<img width="1214" height="815" alt="Mongo-Express-External-Service-CLI" src="https://github.com/user-attachments/assets/fb1510af-76f8-4653-bf04-e70cb6458259" />
+<img width="500" height="500" alt="Mongo-Express-External-Service-CLI" src="https://github.com/user-attachments/assets/fb1510af-76f8-4653-bf04-e70cb6458259" />
 
 ## Mongo Express UI
-<img width="1433" height="835" alt="Mongo-Express-UI" src="https://github.com/user-attachments/assets/9d605be2-9965-462c-830a-c16b3edaca16" />
+<img width="500" height="500" alt="Mongo-Express-UI" src="https://github.com/user-attachments/assets/9d605be2-9965-462c-830a-c16b3edaca16" />
 
 ## ⚙️ Deployment Steps:
 ## 1. Start MiniKube in your host machine
