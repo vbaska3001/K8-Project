@@ -7,7 +7,6 @@ It covers how to manage multi-container applications with ConfigMaps, Secrets, a
 Note: This project was built using Minikube as part of my Kubernetes learning journey.
 
 ## 🧩 What’s Inside
-The setup includes:
 - **MongoDB Deployment** → runs the MongoDB database  
 - **Mongo Express Deployment** → web UI for MongoDB  
 - **ConfigMap** → holds app-level configs (like DB host, DB name)  
@@ -15,21 +14,18 @@ The setup includes:
 - **Services** → expose both apps (internal and external access)
 
 ## 💡 Learning Takeaways
-
 - **K8 Deployments:** How to create, deploy and manage multiple apps with Kubernetes Deployments
 - **Service Configuration:** Configuration of ClusterIP and NodePort Services to allow IP and URL access
 - **ConfigMap and Secrets:** How to manage ConfigMaps and Secrets and reference them in deployments
 - **Minikube and Application Exposure:** Accessing web apps through Minikube
 
 ## 🧰 Tools Used
-
 - Kubernetes (Minikube)
 - Docker and Dockerhub
 - MongoDB
 - Mongo Express
 
 ## ⚙️ Deployment Steps:
-
 ## 1. Start MiniKube in your host machine
 minikube start
 
@@ -89,8 +85,5 @@ URL: http://10.0.1.10:30000 => Sample
 
 ## Errors I faced and fixes provided after debugging:
 - **Error:** CrashLoopBackOff error after deploying Mongo-Express
-- **Cause:** MongoDB service name mismatch or not reachable
-- **Fix:** Found MONGO_SERVER value in ConfigMap and Deployment: mongo-express.yaml file mismatch and corrected it to ensure db name matches in both files
-
- 
-
+- **Cause:** MongoDB service name mismatch found in configmap and deployment file.
+- **Fix:** Found MONGO_SERVER value in ConfigMap and Deployment: Changed the reference value of mongodb-configmap in mongo-express.yaml file.
